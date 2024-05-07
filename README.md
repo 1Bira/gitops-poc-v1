@@ -1,7 +1,9 @@
 # gitops-poc-v1
 gitops-poc is one inititive to understand the questions about gitops using kubernetes and gitops tools (argo, flux) 
 
+The first version have this implmentation design. 
 
+![Design, the architec](gitops.png)
 
 ## Versão 1
 To first version we used this presente ativits checklist. 
