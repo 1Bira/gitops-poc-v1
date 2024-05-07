@@ -23,6 +23,7 @@ jobs:
       run: echo ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       
     - name: Build and push Docker images
+      working-directory: v1/
       run: |
         docker buildx create --use
         docker buildx build \
