@@ -26,7 +26,7 @@ jobs:
       run: |
         docker buildx create --use
         docker buildx build \
-          --file Dockerfile \
+          --file v1/Dockerfile \
           --tag 1bira/fastapi-simple-app:latest \
           --push .
     
