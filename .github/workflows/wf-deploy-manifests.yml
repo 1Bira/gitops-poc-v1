@@ -12,7 +12,7 @@ jobs:
         run: | 
           git config --local user.name 1bira
           git config --local user.email ${{secrets.EMAIL}}
-          git add v1/manifests/
+          git add ./v1/manifests/
           git commit -m "Update manifests"
           git push https://$USERNAME:$REPO_KEY@github.com/1bira/gitops-repo-poc-v1.git
         env:
