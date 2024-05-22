@@ -16,7 +16,7 @@ jobs:
           source-directory: 'v1/manifests/'
           destination-github-username: '1bira'
           destination-repository-name: 'gitops-repo-poc-v1'
-          user-email: ${{secrets.PUSH_TOKEN}}
+          user-email: ${{secrets.EMAIL}}
           target-branch: main
           target-directory: 'cluster/dev/'
           
