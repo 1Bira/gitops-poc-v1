@@ -7,15 +7,16 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: setup git config
-        run: | 
-          git config --local user.name 1bira
-          git config --local user.email ${{secrets.EMAIL}}
-          git add ./v1/manifests/service.yaml
-          git commit -m "Update manifests"
-          git push https://$USERNAME:$REPO_KEY@github.com/1bira/gitops-repo-poc-v1.git
+      - uses: actions/checkout@v4     
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
         env:
-          REPO_KEY: ${{secrets.PUSH_TOKEN}}
-          USERNAME: 1bira
+          API_TOKEN_GITHUB: ${{ secrets.PUSH_TOKEN }}
+        with:
+          source-directory: 'v1/manifests/'
+          destination-github-username: '1bira'
+          destination-repository-name: 'gitops-repo-poc-v1'
+          user-email: ${{secrets.PUSH_TOKEN}}
+          target-branch: main
+          target-directory: 'cluster/dev/'
           
