@@ -9,15 +9,21 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4     
-      - name: GitHub Push        
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.PUSH_TOKEN}}
-          repository: "https://github.com/1Bira/gitops-repo-poc-v1.git" # optional, default is 
-          # Destination branch to push changes
-          branch: main # optional, default is master
-          # Determines if force push is used
-          force: yes # optional
-          # Determines if --tags is used
-          directory: "./v1/manifests"
+      - name: setup git config
+        run: | 
+          cd v1/manifests
+          git config --local user.name $USERNAME
+          git config --local user.email ${{secrets.EMAIL}}
+          echo "Working Directory: $(pwd)"
+
+          # Print values.yaml for debugging before changes
+          echo "Before modification:"
+          cat service.yaml
+          
+          git add service.yaml
+          git commit -m "Update manifests"
+          git push https://$USERNAME:$REPO_KEY@github.com/1bira/gitops-repo-poc-v1.git
+        env:
+          REPO_KEY: ${{secrets.PUSH_TOKEN}}
+          USERNAME: 1bira
           
