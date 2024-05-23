@@ -24,8 +24,6 @@ jobs:
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v2.2.0
-      with:
-        projectBaseDir: v1/
       env:
         GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -40,9 +38,10 @@ jobs:
           --push .
           
     - uses: hadolint/hadolint-action@v3.1.0
+      
       with:
         # The path to the Dockerfile to lint
-        dockerfile: Dockerfile
+        dockerfile: v1/Dockerfile
         
     - name: Login to Docker Hub
       run: echo ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
