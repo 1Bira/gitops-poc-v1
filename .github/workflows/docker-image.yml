@@ -3,6 +3,7 @@ name: Docker Image CI FAST API
 on:
   push:
     branches: [ "main" ]
+    paths: ["v1/app/**"]
   pull_request:
     branches: [ "main" ]
 
