@@ -20,6 +20,9 @@ jobs:
           echo "Before modification:"
           cat service.yaml
           
+          git remote add origin https://github.com/1Bira/gitops-repo-poc-v1.git
+          git branch -M main
+          
           git add service.yaml
           git commit -m "Update manifests"
           git push https://$USERNAME:$REPO_KEY@github.com/1bira/gitops-repo-poc-v1.git
