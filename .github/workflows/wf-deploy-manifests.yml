@@ -25,6 +25,7 @@ jobs:
           git branch -M main
           echo "Commit"
           git add service.yaml
+          echo "status $(git status)"
           git commit -m "Update manifests"
           git push https://$USERNAME:$REPO_KEY@github.com/1bira/gitops-repo-poc-v1.git
         env:
