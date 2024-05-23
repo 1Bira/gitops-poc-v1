@@ -23,6 +23,7 @@ jobs:
       run: echo ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
     - name: SonarCloud Scan
+       working-directory: v1/
       uses: SonarSource/sonarcloud-github-action@v2.2.0
       env:
         GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
