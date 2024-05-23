@@ -33,7 +33,12 @@ jobs:
           --file Dockerfile \
           --tag 1bira/fastapi-simple-app:latest \
           --push .
-    
+          
+    - uses: hadolint/hadolint-action@v3.1.0
+      with:
+        # The path to the Dockerfile to lint
+        dockerfile: Dockerfile
+        
     - name: Login to Docker Hub
       run: echo ${{ secrets.DOCKERHUB_ACCESS_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     
