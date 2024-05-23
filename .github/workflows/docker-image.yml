@@ -24,6 +24,9 @@ jobs:
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{secrets.PUSH_TOKEN}}
+        SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
         
     - name: Build and push Docker images
       working-directory: v1/
