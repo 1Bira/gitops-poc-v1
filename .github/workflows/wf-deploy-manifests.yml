@@ -7,9 +7,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4     
+      - name: Checkout code
+        uses: actions/checkout@v4     
       - name: GitHub Push        
-      - uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.PUSH_TOKEN}}
           repository: "https://github.com/1Bira/gitops-repo-poc-v1.git" # optional, default is 
