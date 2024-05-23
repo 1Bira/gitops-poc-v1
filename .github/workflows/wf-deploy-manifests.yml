@@ -19,4 +19,5 @@ jobs:
           # Determines if force push is used
           force: yes # optional
           # Determines if --tags is used
+          directory: "./v1/manifests"
           
