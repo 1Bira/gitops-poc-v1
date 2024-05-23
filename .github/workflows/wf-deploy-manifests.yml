@@ -1,22 +1,18 @@
 on:
   push:
     branches: [ main ]
-    paths: ["v1/manifests/**"]
+    # paths: ["v1/manifests/**"]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4     
-      - name: GitHub Push
-        # You may pin to the exact commit or the version.
-        # uses: ad-m/github-push-action@40bf560936a8022e68a3c00e7d2abefaf01305a6
+      - name: GitHub Push        
       - uses: ad-m/github-push-action@v0.6.0
         with:
-          # Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
           github_token: ${{ secrets.PUSH_TOKEN}}
-          # Repository name to push. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
-          repository: https://github.com/1Bira/gitops-repo-poc-v1.git # optional, default is 
+          repository: "https://github.com/1Bira/gitops-repo-poc-v1.git" # optional, default is 
           # Destination branch to push changes
           branch: main # optional, default is master
           # Determines if force push is used
