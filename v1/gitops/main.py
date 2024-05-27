@@ -15,7 +15,7 @@ def main():
 
     #g = Github(base_url="https://github.com/1Bira/", auth=auth)
     repo = g.get_repo("1Bira/gitops-repo-poc-v1")
-    repo.get_branch(branch="main")
+    #repo.get_branch(branch="main")
     all_files = []
     contents = repo.get_contents("")
 
