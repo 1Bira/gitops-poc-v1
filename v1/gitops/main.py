@@ -14,7 +14,7 @@ def main():
     #g = Github(auth=auth)
 
     g = Github(base_url="https://github.com/1Bira/", auth=auth)
-    print(g.get_repo("gitops-repo-poc-v1").name)
+    print(g.get_repo("1Bira/gitops-repo-poc-v1").name)
 
     
 
