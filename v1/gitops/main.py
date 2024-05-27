@@ -13,7 +13,7 @@ def main():
     
     #g = Github(auth=auth)
 
-    g = Github(base_url="https://github.com/1Bira/gitops-repo-poc-v1.git", auth=auth)
+    g = Github(base_url="https://github.com/1Bira/", auth=auth)
     g.get_user().login
 
     
