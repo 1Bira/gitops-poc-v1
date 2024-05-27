@@ -21,7 +21,7 @@ jobs:
       - name: executepy script 
         env:
            REPO_KEY: ${{secrets.PUSH_TOKEN}}
-        run: pyhton ./v1/gitops/main.py
+        run: python ./v1/gitops/main.py
            
       #- name: setup git config
       #  run: | 
