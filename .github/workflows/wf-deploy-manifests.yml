@@ -32,7 +32,7 @@ jobs:
 
           # Print values.yaml for debugging before changes
           echo "Before modification:"
-          git clone origin https://github.com/1Bira/gitops-repo-poc-v1.git
+          git clone https://github.com/1Bira/gitops-repo-poc-v1.git
           cp -rf manifests/ gitops-repo-poc-v1/
           cd gitops-repo-poc-v1         
           
