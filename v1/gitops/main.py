@@ -11,9 +11,9 @@ def main():
 
     auth = Auth.Token(github_key)
     
-    #g = Github(auth=auth)
+    g = Github(auth=auth)
 
-    g = Github(base_url="https://github.com/1Bira/", auth=auth)
+    #g = Github(base_url="https://github.com/1Bira/", auth=auth)
     print(g.get_repo("1Bira/gitops-repo-poc-v1").name)
 
     
