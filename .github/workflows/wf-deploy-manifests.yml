@@ -37,7 +37,7 @@ jobs:
           cd gitops-repo-poc-v1         
           
           #git remote set-url origin https://github.com/1Bira/gitops-repo-poc-v1.git
-          echo "add remote origin $(git remote show origin)"
+          #echo "add remote origin $(git remote show origin)"
           git branch -M main
           echo "Commit"
           git add service.yaml
