@@ -33,13 +33,14 @@ jobs:
           # Print values.yaml for debugging before changes
           echo "Before modification:"
           git clone https://github.com/1Bira/gitops-repo-poc-v1.git
-          cp -rf manifests/ gitops-repo-poc-v1/
+          cp -rf manifests/*(.) gitops-repo-poc-v1/clusters/staging/
           echo "ls: $(ls -laF)"
           cd gitops-repo-poc-v1  
           echo "ls: $(ls -laF)"
           
           #git remote set-url origin https://github.com/1Bira/gitops-repo-poc-v1.git
           #echo "add remote origin $(git remote show origin)"
+          echo "git status $(git status)"
           git branch -M main
           echo "Commit"
           git add service.yaml
